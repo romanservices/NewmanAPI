@@ -1,0 +1,18 @@
+﻿
+
+# Code First Migrations
+-[Migrations](https://docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application)
+Commands:
+1. Add-Migration -StartupProject Newman -Context "NewmanContext" {{NewName}}
+2. Update-Database
+**To Remove last migration** 
+Remove-Migration -StartupProject Newman -Context "NewmanContext"
+
+
+# Deploy / Publish
+-Portable deployment (USB) uses publish to file 
+1. Target Location {driveLetter}\newman
+2. Deployment Mode: Self-Contained
+
+To disable the command window on execution add "<OutputType>WinExe</OutputType>" to the .proj file
+
