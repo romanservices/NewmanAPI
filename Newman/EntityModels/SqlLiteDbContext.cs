@@ -3,10 +3,10 @@ using Newman.EntityModels.Models;
 
 namespace Newman.EntityModels
 {
-    public class NewmanContext : DbContext
+    public class SqlLiteDbContext : DbContext
     {
-        public DbContextOptions<NewmanContext> Options { get; }
-        public NewmanContext(DbContextOptions<NewmanContext> options) : base(options)
+        public DbContextOptions<SqlLiteDbContext> Options { get; }
+        public SqlLiteDbContext(DbContextOptions<SqlLiteDbContext> options) : base(options)
         {
             Options = options;
             var root = new DirectoryInfo(Environment.CurrentDirectory).Parent?.FullName;

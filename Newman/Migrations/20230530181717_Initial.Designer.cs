@@ -10,7 +10,7 @@ using Newman.EntityModels;
 
 namespace Newman.Migrations
 {
-    [DbContext(typeof(NewmanContext))]
+    [DbContext(typeof(EntityModels.SqlLiteDbContext))]
     [Migration("20230530181717_Initial")]
     partial class Initial
     {

@@ -9,8 +9,8 @@ using Newman.EntityModels;
 
 namespace Newman.Migrations
 {
-    [DbContext(typeof(NewmanContext))]
-    partial class NewmanContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(EntityModels.SqlLiteDbContext))]
+    partial class DbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {

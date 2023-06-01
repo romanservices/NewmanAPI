@@ -4,10 +4,10 @@ namespace Newman.Services
 {
     public abstract class BaseService
     {
-        protected readonly NewmanContext Context;
-        protected BaseService(NewmanContext context)
+        protected readonly SqlLiteDbContext Context;
+        protected BaseService(SqlLiteDbContext context)
         {
-            Context =new NewmanContext(context.Options);
+            Context =new SqlLiteDbContext(context.Options);
         }
     }
 }

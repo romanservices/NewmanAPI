@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Newman.EntityModels;
 using Newman.EntityModels.Models;
 using Newman.Helpers;
 using Newman.Models;
@@ -17,7 +16,7 @@ namespace Newman.Controllers
            _appService = appService;
         }
         /// <summary>
-        /// Get list of numbers
+        /// List people (id is nullable)
         /// </summary>
         /// <returns></returns>
         [HttpGet()]
@@ -31,7 +30,7 @@ namespace Newman.Controllers
             return await _appService.Get(id);
         }
         /// <summary>
-        /// Post
+        /// Create person
         /// </summary>
         /// <returns></returns>
         [HttpPost()]
@@ -47,7 +46,7 @@ namespace Newman.Controllers
             return new StatusCodeResult(statusCode: 200);
         }
         /// <summary>
-        /// Put
+        /// Update person
         /// </summary>
         /// <returns></returns>
         [HttpPut()]
@@ -63,7 +62,7 @@ namespace Newman.Controllers
             return new StatusCodeResult(statusCode: 200);
         }
         /// <summary>
-        /// Put
+        /// Delete person
         /// </summary>
         /// <returns></returns>
         [HttpDelete(template:"{id}")]

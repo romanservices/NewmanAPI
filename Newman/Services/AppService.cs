@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Newman.EntityModels;
 using Newman.EntityModels.Models;
 using Newman.Helpers;
 using Newman.Models;
@@ -15,7 +14,7 @@ namespace Newman.Services
     }
     public class AppService :BaseService, IAppService
     {
-        public AppService(NewmanContext context):base(context) { }
+        public AppService(EntityModels.SqlLiteDbContext context):base(context) { }
     
         public async Task<List<People>> Get(int? id)
         {

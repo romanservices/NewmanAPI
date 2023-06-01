@@ -3,10 +3,10 @@
 # Code First Migrations
 -[Migrations](https://docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application)
 Commands:
-1. Add-Migration -StartupProject Newman -Context "NewmanContext" {{NewName}}
+1. Add-Migration -StartupProject Newman -Context "SqlLiteDbContext" {{NewName}}
 2. Update-Database
 **To Remove last migration** 
-Remove-Migration -StartupProject Newman -Context "NewmanContext"
+Remove-Migration -StartupProject Newman -Context SqlLiteDbContext"
 
 
 # Deploy / Publish

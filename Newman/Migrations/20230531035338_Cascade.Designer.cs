@@ -10,7 +10,7 @@ using Newman.EntityModels;
 
 namespace Newman.Migrations
 {
-    [DbContext(typeof(NewmanContext))]
+    [DbContext(typeof(EntityModels.SqlLiteDbContext))]
     [Migration("20230531035338_Cascade")]
     partial class Cascade
     {

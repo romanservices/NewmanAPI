@@ -14,14 +14,14 @@ namespace Newman
         public void ConfigureServices(IServiceCollection services)
         {
             //Command line migrations
-            services.AddDbContext<NewmanContext>();
+            services.AddDbContext<SqlLiteDbContext>();
         }
          
         public void Configure(IApplicationBuilder appBuilder)
         {
             var builder = WebApplication.CreateBuilder();
             builder.Services.AddTransient<IAppService, AppService>();
-            builder.Services.AddDbContext<NewmanContext>();
+            builder.Services.AddDbContext<SqlLiteDbContext>();
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
@@ -30,7 +30,7 @@ namespace Newman
             using (var scope =
                    appBuilder.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
             {
-                using var context = scope.ServiceProvider.GetService<NewmanContext>();
+                using var context = scope.ServiceProvider.GetService<SqlLiteDbContext>();
                 context?.Database.Migrate();
             }
 
