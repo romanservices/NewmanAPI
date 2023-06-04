@@ -40,7 +40,11 @@ namespace Newman
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-
+            app.UseCors(c => c
+                .AllowAnyOrigin()
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .SetIsOriginAllowed(o => true));
             app.UseMiddleware(typeof(ErrorHandlingMiddleware));
             app.UseHttpsRedirection();
             app.UseAuthorization();
